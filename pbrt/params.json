@@ -1,0 +1,6 @@
+{
+  "name": "Applezhao.GitHub.io/pages/pbrt-day1",
+  "tagline": "pbrt",
+  "body": "## Ray tracing应该有什么组成？  \r\n\r\n### Cameras  \r\n\r\ngenerate rays  \r\n\r\n### Ray-object intersections  \r\n\r\nAcceleration structure  \r\n\r\n### Light distribution  \r\n\r\nHow about area light?  \r\n\r\n### Visibility  \r\n\r\nShadow rays  \r\n\r\n### Surface scattering  \r\n\r\nMaterial - BRDF, BSDF...  \r\n\r\n### Recursive ray tracing  \r\n\r\nRay trees  \r\n\r\n### Ray propagation  \r\n\r\nParticipating media - Smoke, fog...  \r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
