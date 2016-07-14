@@ -1,6 +1,6 @@
 {
-  "name": "Applezhao.GitHub.io/pages/pbrt-day2",
-  "tagline": "pbrt",
-  "body": "## 基本知识准备  \r\n\r\n### 齐次坐标  \r\n\r\n齐次坐标既可以用来明确的区分向量（w==0）和点（w!=0）， 同时也更易于进行线性几何变换。显然， 齐次坐标使得平移变换对向量没有意义，而对点的平移有意义，这也符合物理意义。  \r\n\r\n### 判断左右手坐标系切换  \r\n\r\n对于一个transform matrix， 它的3*3子矩阵的行列式（determinant）如果为负，则该transform于当前坐标系不符合。当切换过坐标系，我们需要flip Normal来保证normal朝外。  \r\n\r\n### pbrt关于Geometry and Transform  \r\n\r\nVector Point Normal(需要用转置逆矩阵处理) Ray RayDifferent(继承自Ray， 包含一些辅助Ray的信息来计算texture average color， 用于antialiasing) BBox Transform（Animating Transform） Quaternion（可以线性插值， 用于animated transform） DifferentialGeometry      \r\n\r\n### Misc.  \r\n\r\nC++关键字mutable：被mutable修饰的变量，将永远处于可变的状态，即使在一个const函数中。   \r\nC++关键字[explicit](http://www.cnblogs.com/cutepig/archive/2009/01/14/1375917.html)：只对构造函数起作用，用来抑制隐式转换。   \r\nIntel SSE:优化vector matrix等基本运算的性能  \r\n",
+  "name": "Applezhao.GitHub.io/main",
+  "tagline": "",
+  "body": "[PBRT-DAY1 Base&Summary](https://applezhao.github.io/pbrt/day1/)   \r\n\r\n[PBRT-DAY2 Geometry&Transform](https://applezhao.github.io/pbrt/day2/)",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
