@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>pbrt-day1</title>
+    <title>Applezhao.GitHub.io/pages/pbrt-day2 by applezhao</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -11,48 +11,35 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">pbrt-day1</h1>
+      <h1 class="project-name">Applezhao.GitHub.io/pages/pbrt-day2</h1>
       <h2 class="project-tagline">pbrt</h2>
     </section>
 
     <section class="main-content">
       <h2>
-<a id="ray-tracing应该有什么组成" class="anchor" href="#ray-tracing%E5%BA%94%E8%AF%A5%E6%9C%89%E4%BB%80%E4%B9%88%E7%BB%84%E6%88%90" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ray tracing应该有什么组成？</h2>
+<a id="基本知识准备" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E5%87%86%E5%A4%87" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>基本知识准备</h2>
 
 <h3>
-<a id="cameras" class="anchor" href="#cameras" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cameras</h3>
+<a id="齐次坐标" class="anchor" href="#%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>齐次坐标</h3>
 
-<p>generate rays  </p>
-
-<h3>
-<a id="ray-object-intersections" class="anchor" href="#ray-object-intersections" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ray-object intersections</h3>
-
-<p>Acceleration structure  </p>
+<p>齐次坐标既可以用来明确的区分向量（w==0）和点（w!=0）， 同时也更易于进行线性几何变换。显然， 齐次坐标使得平移变换对向量没有意义，而对点的平移有意义，这也符合物理意义。  </p>
 
 <h3>
-<a id="light-distribution" class="anchor" href="#light-distribution" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Light distribution</h3>
+<a id="判断左右手坐标系切换" class="anchor" href="#%E5%88%A4%E6%96%AD%E5%B7%A6%E5%8F%B3%E6%89%8B%E5%9D%90%E6%A0%87%E7%B3%BB%E5%88%87%E6%8D%A2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>判断左右手坐标系切换</h3>
 
-<p>How about area light?  </p>
-
-<h3>
-<a id="visibility" class="anchor" href="#visibility" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Visibility</h3>
-
-<p>Shadow rays  </p>
+<p>对于一个transform matrix， 它的3*3子矩阵的行列式（determinant）如果为负，则该transform于当前坐标系不符合。当切换过坐标系，我们需要flip Normal来保证normal朝外。  </p>
 
 <h3>
-<a id="surface-scattering" class="anchor" href="#surface-scattering" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Surface scattering</h3>
+<a id="pbrt关于geometry-and-transform" class="anchor" href="#pbrt%E5%85%B3%E4%BA%8Egeometry-and-transform" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>pbrt关于Geometry and Transform</h3>
 
-<p>Material - BRDF, BSDF...  </p>
-
-<h3>
-<a id="recursive-ray-tracing" class="anchor" href="#recursive-ray-tracing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Recursive ray tracing</h3>
-
-<p>Ray trees  </p>
+<p>Vector Point Normal(需要用转置逆矩阵处理) Ray RayDifferent(继承自Ray， 包含一些辅助Ray的信息来计算texture average color， 用于antialiasing) BBox Transform（Animating Transform） Quaternion（可以线性插值， 用于animated transform） DifferentialGeometry      </p>
 
 <h3>
-<a id="ray-propagation" class="anchor" href="#ray-propagation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ray propagation</h3>
+<a id="misc" class="anchor" href="#misc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Misc.</h3>
 
-<p>Participating media - Smoke, fog...  </p>
+<p>C++关键字mutable：被mutable修饰的变量，将永远处于可变的状态，即使在一个const函数中。<br>
+C++关键字<a href="http://www.cnblogs.com/cutepig/archive/2009/01/14/1375917.html">explicit</a>：只对构造函数起作用，用来抑制隐式转换。<br>
+Intel SSE:优化vector matrix等基本运算的性能  </p>
 
       <footer class="site-footer">
 
